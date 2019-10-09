@@ -18,8 +18,6 @@ angular.
       $scope.nuevaTarea = "";
       $scope.mensajeValidacion = "";
 
-      $scope.animacionEntrada = "animate fadeInDown slow";
-      $scope.animacionSalida = "animate fadeOutDown slow";
 
       //eventos
 

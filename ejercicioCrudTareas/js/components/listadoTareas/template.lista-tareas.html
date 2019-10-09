@@ -21,7 +21,7 @@
 
 
 <ul class="list-group">
-    <li class="list-group-item {{(tarea.completada)?'tachado':''}} {{animacionEntrada}}" ng-repeat="tarea in $ctrl.tareas | filter: busqueda">
+    <li class="list-group-item {{(tarea.completada)?'tachado':''}}" ng-repeat="tarea in $ctrl.tareas | filter: busqueda">
         
         <div ng-hide="mostrarEditar">
             <input type="checkbox" ng-click="completarTarea(tarea)" ng-checked="tarea.completada">
