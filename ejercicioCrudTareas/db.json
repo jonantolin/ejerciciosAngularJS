@@ -1,0 +1,66 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "completada": true,
+      "descripcion": "Tomar cafe a las 11:00"
+    },
+    {
+      "completada": true,
+      "descripcion": "Ejemplo Componentes",
+      "id": 2
+    },
+    {
+      "completada": false,
+      "descripcion": "imagen de fondo con css",
+      "id": 3
+    },
+    {
+      "completada": false,
+      "descripcion": "Poner focus al input despues de pulsar boton",
+      "id": 4
+    },
+    {
+      "completada": true,
+      "descripcion": "icono para eliminar",
+      "id": 11
+    },
+    {
+      "completada": true,
+      "descripcion": "checkbutton alado de la tarea para marcar si esta o no terminada",
+      "id": 12
+    },
+    {
+      "completada": true,
+      "descripcion": "filtrar tareas por nombre",
+      "id": 13
+    },
+    {
+      "completada": true,
+      "descripcion": "filtrar por completadas o No compleatdas",
+      "id": 14
+    },
+    {
+      "completada": true,
+      "descripcion": "Poder editar tareas",
+      "id": 15
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="fruteriaApp"> <!-- directiva que dice que es una app de angular -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Ejercicio Comprar Fruta</title>
+</head>
+<body>
+   
+    <div class="container w-50">
+  
+        <h1>Compra fruta</h1>
+
+        <div ng-controller="frutasController">
+
+            <p>Busqueda: </p>
+            <input type="text" ng-model="busqueda.nombre" placeholder="Nombre de la fruta"><br>
+            <label>Buscar por color: </label>
+            <select ng-model="busqueda.color">
+                <option value="">Cualquiera</option>
+                <option value="Verde">Verde</option>
+                <option value="Rojo">Rolo</option>
+                <option value="Amarillo">Amarillo</option>
+
+            </select>
+
+            <!-- 
+                <p>Ordenar por: <br>
+                 <button class="btn btn-primary" ng-click="campo = 'nombre'; orden = !orden;">Nombre</button>
+                 <button class="btn btn-primary" ng-click="campo = 'precio'; orden = !orden;">Precio</button>
+                 <button class="btn btn-primary" ng-click="campo = 'color'; orden = !orden;">Color</button>
+                </p>
+            -->
+            <p>Ordenar por: <br>
+                <button class="btn btn-primary" ng-click="ordenar('nombre')">Nombre <i class='fas {{simboloOrden}}' ng-show="simboloVisible"></i></button>
+                <button class="btn btn-primary" ng-click="ordenar('precio')">Precio <i class='fas {{simboloOrden}}'  ng-show="simboloVisible"></i></button>
+                <button class="btn btn-primary" ng-click="ordenar('color')">Color <i class='fas {{simboloOrden}}'  ng-show="simboloVisible"></i></button>
+            </p>   
+
+            <ul class="list-group">
+               <!-- <li class="list-group-item" ng-repeat="fruta in frutas.frutas | filter:busqueda | orderBy: '-precio'"> -->
+                    <li class="list-group-item" ng-repeat="fruta in frutas.frutas | filter:busqueda | orderBy: campo:orden">
+                    <div class="row">
+                       <div class="col-2">
+
+                            <img ng-src="{{fruta.imagen}}" alt="fruta" width="50">
+                       </div>
+                    
+                       <div class="col-8">
+                            <p>{{fruta.nombre}}</p>
+                            <p>{{fruta.precio}} € / Unidad
+                                <span>
+                                    <button class="btn btn-info btn-sm" ng-click="restarCantidad(fruta)"> - </button>
+                                    {{fruta.cantidad}}
+                                    <button class="btn btn-info btn-sm" ng-click="sumarCantidad(fruta)"> + </button>
+                                </span></p>
+                            
+
+                       </div>
+                    
+                   </div> 
+
+                </li>
+
+                <button class="btn btn-success" ng-click="calcularPrecio()"><i class="fas fa-shopping-cart"></i> Calcular Precio</button>
+                <p ng-show="mostrarPrecio">Tu compra: {{precioTotal}} €</p>
+            </ul>
+   
+        </div>
+       
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

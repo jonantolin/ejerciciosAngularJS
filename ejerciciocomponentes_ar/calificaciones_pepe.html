@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="componentesApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Angular JS -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/components/boton/componente-boton.js"></script>
+    <script src="js/components/calificacion/componente-calificacion.js"></script>
+    <script src="js/componente-saludar.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Angular JS Project</title>
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>Calificación de Pepe</h1>
+
+        <hr>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Asignatura</th>
+                    <th scope="col">Nota</th>
+                    <th scope="col">Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>
+                        <componente-calificacion pnota="5"></componente-calificacion>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>
+                        <componente-calificacion pnota="8"></componente-calificacion>
+                    </td>
+                    <td>ASDF</td>
+                </tr>
+                <tr>
+                    <td>JS</td>
+                    <td>
+                        <componente-calificacion pnota="6"></componente-calificacion>
+                    </td>
+                    <td>ASDF</td>
+                </tr>
+                <tr>
+                    <td>Angular JS</td>
+                    <td>
+                        <componente-calificacion pnota="9"></componente-calificacion>
+                    </td>
+                    <td>ASDF</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</body>
+
+</html>

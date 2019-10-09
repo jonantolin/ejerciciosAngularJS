@@ -1,0 +1,25 @@
+/*h1{
+    color: teal;
+}*/
+
+body{
+    
+background-image: url('../images/todoimg.jpg');
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+background-size: cover;
+
+
+}
+
+.tachado{
+    text-decoration: line-through;
+    color:grey;
+}
+
+.far:hover{
+
+    cursor:pointer;
+    font-size: 110%;
+}

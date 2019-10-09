@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app> <!-- directiva que dice que es una app de angular -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="js/angular.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container">
+        <h2 class="text-primary"> Ejemplos filtros </h2>
+        <a href="https://docs.angularjs.org/api/ng/filter" target="_blank">Documentacion API</a>
+
+        <ul class="list-group">
+            <li class="list-group-item"><span class="badge badge-primary"> uppercase </span> Wellcome to the Hell -> {{ "Wellcome to the Hell" | uppercase }}</li>
+            <li class="list-group-item"><span class="badge badge-primary"> lowercase </span> Wellcome to the Hell -> {{ "Wellcome to the Hell" | lowercase }}</li>
+            <li class="list-group-item"><span class="badge badge-primary"> number:0 </span> (a la izquierda el valor, a la derecha el número de decimales)
+                    4238.87437 -> {{4238.87437 | number:0 }}</li>
+            <li class="list-group-item"><span class="badge badge-primary"> number:2 </span> 4238.87437 -> {{4238.87437 | number:2 }} </li>
+            <li class="list-group-item"><span class="badge badge-primary"> date:'medium' </span> (timestamp | formato) 1299328823006 -> {{ 1299328823006 | date:'medium' }}</li>
+            <li class="list-group-item"><span class="badge badge-primary"> date:'dd/MM/yyyy' </span> (timestamp | formato) 1299328823006 -> {{ 1299328823006 | date:'dd/MM/yyyy' }}</li>
+            <li class="list-group-item"><span class="badge badge-primary"> currency: € </span> ( valor | currency: formato) 2000 -> {{ 2000 | currency: '€ ' }}</li>
+            <li class="list-group-item"><span class="badge badge-primary"> currency: € : numDecimales </span> ( valor | currency: formato : decimales) 2000 -> {{ 2000 | currency: '€ ': 0 }}</li>
+
+
+
+        </ul>
+
+        <h2 class="text-primary">Directiva ng-model</h2>
+
+        <p>Nombre: {{ nombre }}</p>
+        <input type="text" ng-model="nombre" >
+        <br>
+
+        <p class="text-info">(fecha | date: 'dd/MM/yyyy')<br>
+        <span class="text-primary">Fecha:{{fecha | date:'dd/MM/yyyy' }} </span></p>
+        <input type="date" ng-model="fecha" >
+
+        <p>
+            Selecciona país: {{ pais }}
+            <br>
+            <select ng-model="pais">
+                <option value="Es">España</option>
+                <option value="Fr">Francia</option>
+                <option value="Al">Alemania</option>
+            </select>
+        </p>
+
+        <p>
+            Elige tus gustos de los vídeos: <b>musica:</b> {{ch1}} <b>sustos:</b> {{ch2}} <b>bromas:</b> {{ch3}} <br>
+            <input type="checkbox" ng-model="ch1"> Música <br>
+            <input type="checkbox" ng-model="ch2"> Sustos <br>
+            <input type="checkbox" ng-model="ch3"> Bromas <br>
+
+        </p>
+
+        <p>
+            Elige tu género: {{ genero }} <br>
+
+            <input type="radio" value="H" ng-model="genero"> Hombre<br>
+            <input type="radio"  value="M" ng-model="genero"> Mujer <br>
+
+
+        </p>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

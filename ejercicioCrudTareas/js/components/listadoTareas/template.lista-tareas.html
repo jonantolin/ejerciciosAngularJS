@@ -1,0 +1,48 @@
+
+<h2>{{$ctrl.titulo}}</h2>
+
+<p ng-show="$ctrl.tareas.length == 0">Cargando tareas....</p>
+<p>{{$ctrl.mensajeError}}</p>
+
+<div class="border p-2 mb-2 bg-light">
+    <input type="text" size="40" ng-model="nuevaTarea" placeholder="Descripcion tarea" autofocus>
+    <button class="btn btn-primary btn-sm" ng-click="agregarTarea()">Nueva</button>
+    <input class="search" ng-model="busqueda.descripcion" placeholder="Buscar nombre tarea">
+    <select ng-model="busqueda.completada">
+        <option value="">Todas</option>
+        <option value="true">Completadas</option>
+        <option value="false">No completadas</option>
+    </select>
+
+
+    <p class="text-danger">{{mensajeValidacion}}</p>
+    
+</div>
+
+
+<ul class="list-group">
+    <li class="list-group-item {{(tarea.completada)?'tachado':''}} {{animacionEntrada}}" ng-repeat="tarea in $ctrl.tareas | filter: busqueda">
+        
+        <div ng-hide="mostrarEditar">
+            <input type="checkbox" ng-click="completarTarea(tarea)" ng-checked="tarea.completada">
+            <span class="badge {{(tarea.completada)?'badge-secondary':'badge-primary'}}">{{tarea.id}}</span>  {{tarea.descripcion}}
+        </div>
+
+        <div ng-show="mostrarEditar">
+            <input type="checkbox" ng-click="completarTarea(tarea)" ng-checked="tarea.completada">
+            <input type="text" ng-model="editado" size="{{tarea.descripcion.length}}">
+            <span class="btn btn-outline-success" ng-click="mostrarEditar = !mostrarEditar; tarea.descripcion = editado; modificarTarea(tarea)">Guardar</span>
+            <span class="btn btn-outline-danger" ng-click="mostrarEditar = !mostrarEditar " >Cancelar</span>
+
+        </div>
+
+
+        <span class="d-float float-right" >
+            <i class=" text-info far fa-edit" ng-click="mostrarEditar = !mostrarEditar; editado = tarea.descripcion"></i>
+            <i class="text-danger far fa-trash-alt" ng-click="eliminarTarea(tarea)"></i>
+            
+        </span>
+        
+    </li>
+    
+  </ul>

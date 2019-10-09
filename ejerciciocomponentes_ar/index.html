@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="componentesApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Angular JS -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/phone-list.component.js"></script>
+    <script src="js/components/boton/componente-boton.js"></script>
+    <script src="js/components/calificacion/componente-calificacion.js"></script>
+    <script src="js/componente-saludar.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Ejercicio Componentes</title>
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>Ejercicio Componentes</h1>
+
+        <hr>
+
+        <a href="https://docs.angularjs.org/tutorial/step_03" target="_blank">Tutorial Oficial</a>
+        <a href="https://docs.angularjs.org/guide/component" target="_blank">Documentación Oficial</a>
+
+        <h2>Nuestro primer componente</h2>
+
+        <p><saludo-usuario></saludo-usuario></p>
+
+        <h2>Nuestro segundo componente con template para el HTML</h2>
+
+        <p><componente-boton></componente-boton></p>
+
+        <h2>Nuestro tercer componente: Poner calificación</h2>
+
+        <p><componente-calificacion pnota="10"></componente-calificacion></p>
+
+        <h2>Calificaciones de Pepe</h2>
+
+        <p><a href="calificaciones_pepe.html">Calificaciones de Pepe</a></p>
+
+        <h2>Phone List</h2>
+
+        <p><phone-list></phone-list></p>
+    </main>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</body>
+
+</html>
