@@ -1,0 +1,12 @@
+
+
+.tachado{
+  text-decoration: line-through;
+  color:grey;
+}
+
+.far:hover{
+
+  cursor:pointer;
+  font-size: 110%;
+}
