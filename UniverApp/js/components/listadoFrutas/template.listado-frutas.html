@@ -20,8 +20,8 @@
     </tbody>
 </table>  
 
-<a class="btn btn-sm btn-primary" ng-click="$ctrl.anteriorPagina($ctrl.pagina)" ng-class="($ctrl.pagina == 0)?'disabled':''">Anterior</a>
+<a class="btn btn-sm btn-{{($ctrl.pagina == 0)?'secondary':'primary'}}" ng-click="$ctrl.anteriorPagina($ctrl.pagina)" ng-class="($ctrl.pagina == 0)?'disabled':''">Anterior</a>
 <span> pagina {{$ctrl.pagina + 1}}</span>
-<a class="btn btn-sm btn-primary" ng-click="$ctrl.siguientePagina($ctrl.pagina)" ng-class="($ctrl.posicion >= $ctrl.frutas.length)?'disabled':''">Siguiente</a>
+<a class="btn btn-sm btn-{{($ctrl.posicion >= $ctrl.frutas.length)?'secondary':'primary'}}" ng-click="$ctrl.siguientePagina($ctrl.pagina)" ng-class="($ctrl.posicion >= $ctrl.frutas.length)?'disabled':''">Siguiente</a>
 
 </div>
