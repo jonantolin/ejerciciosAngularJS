@@ -64,3 +64,14 @@ angular.module('universidadApp')
 
 
     });
+
+    angular.module('universidadApp').
+        filter('euros', function(){
+
+            return function(numero){
+
+                return numero.replace(".", ",") +" €";
+
+            }
+
+        });

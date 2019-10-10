@@ -12,9 +12,9 @@
     </thead>
     <tbody>
       <tr ng-repeat="fruta in $ctrl.frutasPagina | filter: busqueda | orderBy: $ctrl.orden : $ctrl.descendente">
-        <td scope="row"> <img ng-src="{{fruta.imagen}}" alt="{{fruta.nombre}}" width="30"></td>
+        <td scope="row"> <img ng-src="{{fruta.imagen}}" alt="{{fruta.nombre}}" width="50"></td>
         <td>{{fruta.nombre}}</td>
-        <td>{{fruta.precio | currency}} € </td>
+        <td>{{fruta.precio | number | euros}}</td>
         
       </tr>
     </tbody>
