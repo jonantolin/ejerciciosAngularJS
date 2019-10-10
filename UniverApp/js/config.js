@@ -17,6 +17,12 @@ app.config( function( $routeProvider ){
     .when('/tareas',{
       template: '<listado-tareas></listado-tareas>'
     })
+    .when('/componentes',{
+      templateUrl: 'parciales/componente.html'
+    })
+    .when('/frutas',{
+      templateUrl: 'parciales/frutas.html'
+    })
     .otherwise({
       redirectTo: '/'
     })

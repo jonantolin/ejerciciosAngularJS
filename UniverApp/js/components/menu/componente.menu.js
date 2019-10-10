@@ -7,27 +7,44 @@ angular.module('universidadApp')
                 {
                   "nombre": "Inicio",
                   "path" : "#!/",
-                  "active" : false
+                  "active" : false,
+                  "icono" : "fas fa-home"
                 },
                 {
                   "nombre": "Profesores",
                   "path" : "#!/profesores",
-                  "active" : false
+                  "active" : false,
+                  "icono" : "fas fa-user-tie"
                 },
                 {
                   "nombre": "Alumnos",
                   "path" : "#!/alumnos",
-                  "active" : false
+                  "active" : false,
+                  "icono" : "fas fa-home"
                 },
                 {
                   "nombre": "Creditos",
                   "path" : "#!/creditos",
-                  "active" : false
+                  "active" : false,
+                  "icono" : "fas fa-home"
                 },
                 {
                   "nombre": "Tareas",
                   "path" : "#!/tareas",
-                  "active" : false
+                  "active" : false,
+                  "icono" : "fas fa-home"
+                },
+                {
+                  "nombre": "Componentes",
+                  "path" : "#!/componentes",
+                  "active" : false,
+                  "icono" : "fas fa-home"
+                },
+                {
+                  "nombre": "Frutas",
+                  "path" : "#!/frutas",
+                  "active" : false,
+                  "icono" : "fas fa-carrot"
                 }
               ];
             
