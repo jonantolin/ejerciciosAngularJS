@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="fruta in $ctrl.frutasPagina | filter: busqueda | orderBy: $ctrl.orden : $ctrl.descendente">
+      <tr ng-repeat="fruta in $ctrl.frutas | filter: busqueda | orderBy: $ctrl.orden : $ctrl.descendente | limitTo: $ctrl.posicion | limitTo: -3">
         <td scope="row"> <img ng-src="{{fruta.imagen}}" alt="{{fruta.nombre}}" width="50"></td>
         <td>{{fruta.nombre}}</td>
         <td>{{fruta.precio | number | euros}}</td>
@@ -22,6 +22,6 @@
 
 <a class="btn btn-sm btn-primary" ng-click="$ctrl.anteriorPagina($ctrl.pagina)" ng-class="($ctrl.pagina == 0)?'disabled':''">Anterior</a>
 <span> pagina {{$ctrl.pagina + 1}}</span>
-<a class="btn btn-sm btn-primary" ng-click="$ctrl.siguientePagina($ctrl.pagina)">Siguiente</a>
+<a class="btn btn-sm btn-primary" ng-click="$ctrl.siguientePagina($ctrl.pagina)" ng-class="($ctrl.posicion >= $ctrl.frutas.length)?'disabled':''">Siguiente</a>
 
 </div>

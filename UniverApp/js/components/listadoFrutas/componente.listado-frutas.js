@@ -12,12 +12,16 @@ angular.module('universidadApp')
             self.iconoOrden = "";
 
             self.pagina=0;
+
+            self.posicion = 3; //mostrara productos de 3 en 3
             
 
             self.siguientePagina = function(pagina){
 
                 self.pagina = pagina + 1;
-                self.frutasPagina = self.frutas.slice(3 * self.pagina, (self.pagina * 3) + 3 );
+             
+                self.posicion += 3; 
+               // self.frutasPagina = self.frutas.slice(3 * self.pagina, (self.pagina * 3) + 3 );
 
 
 
@@ -26,7 +30,9 @@ angular.module('universidadApp')
             self.anteriorPagina = function(pagina){
 
                 self.pagina = pagina - 1;
-                self.frutasPagina = self.frutas.slice(3 * self.pagina, (self.pagina * 3) + 3 );
+                
+                self.posicion -= 3;
+               // self.frutasPagina = self.frutas.slice(3 * self.pagina, (self.pagina * 3) + 3 );
 
 
 
@@ -35,7 +41,8 @@ angular.module('universidadApp')
             $http.get(url).then(function(response){
 
                 self.frutas = response.data;
-                self.frutasPagina = self.frutas.slice(3 * self.pagina, self.pagina + 3 );
+                // Lo de abajo está muy bien si no existiera el filtro "limitTo"
+                //self.frutasPagina = self.frutas.slice(3 * self.pagina, self.pagina + 3 );
 
             }, function(response){
 
