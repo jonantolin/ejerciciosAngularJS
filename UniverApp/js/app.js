@@ -12,7 +12,7 @@ this.$onInit = function(){
     };*/    
 
 
-    let url = "http://localhost:3000/tareas";
+    let url = "http://localhost:3000/";
 
     $http.get(url).then(function(response){
 

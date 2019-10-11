@@ -2,23 +2,48 @@
 
 <input class="form-control" type="search" ng-model="busqueda.nombre" placeholder="Busca nombre fruta">
 
+<label>Color: </label>
+<select ng-model="busqueda.color">
+  <option value="">Cualquiera</option>
+
+  <!-- filtro js a pelo 
+  <option value="{{color}}" ng-repeat="color in $ctrl.colores">{{color}}</option>
+  -->
+  <!-- filtro angular que saca los colores no repetidos --->
+  <option value="{{color}}" ng-repeat="color in $ctrl.frutas | colores">{{color}}</option>
+  
+
+  
+</select>
+
+
+
+<br>
+<!-- Frutas con precio mayor a 10 = {{$ctrl.frutas10e}} -->
+
 <table class="table">
     <thead>
       <tr>
         <th scope="col"></th>
         <th scope="col" ng-click="$ctrl.ordenar('nombre')">Nombre <span ng-show="$ctrl.orden == 'nombre'"><i class="fas fa-sort-{{$ctrl.iconoOrden}}"></i></span></th>
         <th scope="col" ng-click="$ctrl.ordenar('precio')">Precio <span ng-show="$ctrl.orden == 'precio'"><i class="fas fa-sort-{{$ctrl.iconoOrden}}"></i></span></th>
+        <th scope="col" ng-click="$ctrl.ordenar('color')">Color <span ng-show="$ctrl.orden == 'color'"><i class="fas fa-sort-{{$ctrl.iconoOrden}}"></i></span></th>
       </tr>
     </thead>
     <tbody>
+
+      
       <tr ng-repeat="fruta in $ctrl.frutas | filter: busqueda | orderBy: $ctrl.orden : $ctrl.descendente | limitTo: $ctrl.posicion | limitTo: -3">
         <td scope="row"> <img ng-src="{{fruta.imagen}}" alt="{{fruta.nombre}}" width="50"></td>
         <td>{{fruta.nombre}}</td>
         <td>{{fruta.precio | number | euros}}</td>
-        
+        <td>{{fruta.color}}</td>
+      <td>  {{fruta.keys()}}</td>
       </tr>
     </tbody>
 </table>  
+
+<p>Precio de comprar todas las frutas: {{$ctrl.precioTotal}}</p>
 
 <a class="btn btn-sm btn-{{($ctrl.pagina == 0)?'secondary':'primary'}}" ng-click="$ctrl.anteriorPagina($ctrl.pagina)" ng-class="($ctrl.pagina == 0)?'disabled':''">Anterior</a>
 <span> pagina {{$ctrl.pagina + 1}}</span>

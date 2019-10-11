@@ -45,6 +45,18 @@ angular.module('universidadApp')
                   "path" : "#!/frutas",
                   "active" : false,
                   "icono" : "fas fa-carrot"
+                },
+                {
+                  "nombre": "Map, Filter, Reduce",
+                  "path" : "#!/map-filter-reduce",
+                  "active" : false,
+                  "icono" : "fas fa-carrot"
+                },
+                {
+                  "nombre": "Ejemplo Real (map, filter, etc)",
+                  "path" : "#!/programacion-funcional",
+                  "active" : false,
+                  "icono" : "fas fa-carrot"
                 }
               ];
             

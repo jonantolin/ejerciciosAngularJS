@@ -1,0 +1,112 @@
+<h1>Map Filter Reduce</h1>
+
+<div ng-controller="ControladorEjemplo">
+    <div> <!-- Ejemplo Map-->
+
+        <h3>Array.map(function)</h3>
+        <p>Esta función "mapea" el array, esto es, aplica a cada valor del array, la función pasada por parámetro y devuelve un array con esos valores "mapeados".</p>
+        <p>Por ejemplo tenemos el siguiente array: <code>numeros = [ 13, 45, 5, 8, 9, 2];</code> , si ahora queremos tener un array con los valores multiplicados por 2, 
+        sería así: <code>nuevoArray = numeros.map(valor => valor*2);</code></p>
+
+        <img class="gif-ejemplo" src="https://miro.medium.com/max/1257/1*4EGwsCicbWJeml2aAm714A.gif" alt="ejemplo">
+         
+        <br><br>
+        <h5>Un ejemplo con las frutas, tenemos el siguiente Array de objetos JSON: </h5>
+        <pre><code>
+
+            "frutas": [
+    {
+      "nombre": "Manzana",
+      "imagen": "img/manzana.jpg",
+      "color": "Verde",
+      "precio": 13,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Fresa",
+      "imagen": "img/fresa.jpg",
+      "color": "Rojo",
+      "precio": 9,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Naranja",
+      "imagen": "img/naranja.jpg",
+      "color": "Naranja",
+      "precio": 9.5,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Platano",
+      "imagen": "img/platano.jpg",
+      "color": "Amarillo",
+      "precio": 6.5,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Mango",
+      "imagen": "img/mango.jpg",
+      "color": "Naranja",
+      "precio": 13.75,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Kiwi",
+      "imagen": "img/kiwi.jpg",
+      "color": "Marron",
+      "precio": 7.5,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Melocotón",
+      "imagen": "img/melocoton.jpg",
+      "color": "Naranja",
+      "precio": 8.5,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Pera",
+      "imagen": "img/pera.jpg",
+      "color": "Amarillo",
+      "precio": 11,
+      "cantidad": 0
+    }
+  ]
+
+        </code></pre>
+
+        <p>Si queremos obtener un array que contenga solamente el nombre de las frutas, haríamos <code>frutasNombre = frutas.map(valor => valor.nombre)</code></p>
+        <p>En la función del parámetro <code>valor</code> sería cada objeto JSON con todos tus campos. <code>"valor.nombre"</code> sería el campo que devuelve y se inserta en el nuevo array </p>
+        <p>La función arrow es equivalente de la manera tradicional así: </p>
+
+        <pre><code>
+            frutasNombres = frutas.map(function(valor){ return valor.nombre });
+        </code></pre>
+
+
+    </div>
+    <hr>
+    <div> <!-- Ejemplo Filter -->
+
+        
+
+        <h3>Array.filter(function)</h3>
+       
+        Colores: {{colores}}
+        <img class="gif-ejemplo" src="https://miro.medium.com/max/1257/1*TOPYVvfMBmjajPh-fqZ9GQ.gif" alt="ejemplo">
+
+    </div>
+    <hr>
+    <div> <!-- Ejemplo Reduce -->
+
+        <h3>Array.reduce(function, accumulator)</h3>
+        <img class="gif-ejemplo" src="https://miro.medium.com/max/1257/1*TOPYVvfMBmjajPh-fqZ9GQ.gif" alt="ejemplo">
+
+
+
+    </div>
+
+
+
+
+</div>

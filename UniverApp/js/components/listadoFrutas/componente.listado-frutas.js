@@ -9,11 +9,15 @@ angular.module('universidadApp')
             self.orden = "";
             self.descendente = false;
 
+            self.colores = [];
+
             self.iconoOrden = "";
 
             self.pagina=0;
 
             self.posicion = 3; //mostrara productos de 3 en 3
+
+            self.colores = [];
             
 
             self.siguientePagina = function(pagina){
@@ -41,6 +45,13 @@ angular.module('universidadApp')
             $http.get(url).then(function(response){
 
                 self.frutas = response.data;
+                self.frutas10e = response.data.filter( e=> e.precio >10).map( e=> e.nombre);
+                self.precioTotal = response.data.map( e=> e.precio).reduce((pv, cv) => pv+cv );
+
+                // v = valor, i = indice, a = el array
+                self.colores = response.data.map(e=>e.color).filter((v, i, a) => a.indexOf(v) === i);
+
+
                 // Lo de abajo está muy bien si no existiera el filtro "limitTo"
                 //self.frutasPagina = self.frutas.slice(3 * self.pagina, self.pagina + 3 );
 
@@ -82,3 +93,25 @@ angular.module('universidadApp')
             }
 
         });
+
+    angular.module('universidadApp').
+        filter('colores', function(){ // Filtro que saca los colores y evita que se repitan
+
+            return function(a){
+
+                return a.map(e=>e.color).filter((v, i, a) => a.indexOf(v) === i);
+
+            }
+
+        });    
+
+    angular.module('universidadApp').
+        filter('noRepetir', function(){ // 
+
+            return function(a){
+
+                return a.filter((v, i, a) => a.indexOf(v) === i);
+
+            }
+
+        });    

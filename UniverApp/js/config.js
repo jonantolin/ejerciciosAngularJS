@@ -23,6 +23,12 @@ app.config( function( $routeProvider ){
     .when('/frutas',{
       templateUrl: 'parciales/frutas.html'
     })
+    .when('/map-filter-reduce',{
+      templateUrl: 'parciales/map-filter-reduce.html'
+    })
+    .when('/programacion-funcional',{
+      templateUrl: 'parciales/programacion-funcional.html'
+    })
     .otherwise({
       redirectTo: '/'
     })
