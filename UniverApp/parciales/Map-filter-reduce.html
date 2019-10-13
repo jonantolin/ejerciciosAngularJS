@@ -12,7 +12,7 @@
          
         <br><br>
         <h5>Un ejemplo con las frutas, tenemos el siguiente Array de objetos JSON: </h5>
-        <pre><code>
+        <pre class="bg-light"><code>
 
             "frutas": [
     {
@@ -79,7 +79,7 @@
         <p>En la función del parámetro <code>valor</code> sería cada objeto JSON con todos tus campos. <code>"valor.nombre"</code> sería el campo que devuelve y se inserta en el nuevo array </p>
         <p>La función arrow es equivalente de la manera tradicional así: </p>
 
-        <pre><code>
+        <pre class="bg-light"><code>
             frutasNombres = frutas.map(function(valor){ return valor.nombre });
         </code></pre>
 
@@ -92,15 +92,69 @@
 
         <h3>Array.filter(function)</h3>
        
-        Colores: {{colores}}
+        
         <img class="gif-ejemplo" src="https://miro.medium.com/max/1257/1*TOPYVvfMBmjajPh-fqZ9GQ.gif" alt="ejemplo">
 
+        <p class="mt-2">Como su propio nombre indica esta función filtra los valores del array devolviendo un array con los valores que cumplan la condición (devuelvan <code>true</code>) resultante de aplicar a cada valor la función pasada por parámetro</p>
+
+        <p>Un ejemplo sencillo: Tenemos un array de números <code>numeros = [2, 43, 8, 9, 12, 5, 71, 6];</code> . Queremos tener un array que contenga los números mayores que 10. Aplicamos el filtro de esta manera: <code>numerosPares = numeros.filter(valor => valor > 10);</code></p>
+
+        <p>Ahora <code>numerosPares</code> quedará así: <code>numerosPares = [43, 12, 71]</code></p>
+
+        <p>Vamos a verlo con el array de las frutas.</p>
+
+        <p>Queremos tener un array con los colores sin repetir de todas las frutas. <code>color</code> es un atributo (o clave) de cada objeto del array. Por tanto en primer lugar vamos a mapear el array para quedarnos solo con ese atributo. Podemos hacerlo así: </p>
+
+        <pre class="bg-light"><code>
+          colores = frutas.map( fruta => fruta.color);
+        </code></pre>
+
+        <p>Ahora ya tenemos un array de los colores de las frutas, pero hay valores repetidos ("Naranja" aparece 3 veces), vamos a filtrarlos: </p>
+
+        <pre class="bg-light"><code>
+          coloresSinRepetir = colores.filter( (v, i, a) => a.indexOf(valor) === i);
+        </code></pre>
+
+        <p> A la función pasada por parámetro de <code>filter</code> podemos pasarle 3 parámetros que serán, <code>v</code> que es el valor de cada iteración del array al que le aplicamos el <code>.filter</code> , <code>i</code> que será un entero que contiene el indice de la iteración y <code>a</code> que será el array que se está iterando.</p>
+
+        <p>En este filtro concreto, lo que estoy haciendo es mirar el indice de la primera coincidencia de ese valor en el array y compararlo con el indice del "bucle" del filter. De esta forma cuando encuentra por ejemplo "Naranja", <code>a.indexOf(v)</code> dará la posición de <strong>la primera coincidencia</strong> que encuentra de ese valor en el array de colores y coincidira con <code>i</code> (que es el indice o contador del bucle del filter) la primera vez, pero no las veces siguientes que encuentre el mismo valor </p>
+
+        <p>Por supuesto estas funciones se pueden concatenar y tener el mismo resultado en una sola linea. De esta forma: </p>
+
+        <pre class="bg-light"><code>
+
+           coloresSinRepetir =  frutas.map( fruta => fruta.color).filter( (v, i, a) => a.indexOf(valor) === i);
+
+        </code></pre>
+
+        <p>El resultado será el siguiente: </p>
+
+        <pre class="bg-light"><code>
+          coloresSinRepetir =  {{colores}};
+        </code></pre>
     </div>
     <hr>
     <div> <!-- Ejemplo Reduce -->
 
         <h3>Array.reduce(function, accumulator)</h3>
-        <img class="gif-ejemplo" src="https://miro.medium.com/max/1257/1*TOPYVvfMBmjajPh-fqZ9GQ.gif" alt="ejemplo">
+        <img class="gif-ejemplo" src="https://miro.medium.com/max/1257/1*dhTC_FFgiH3mKROrnDj12w.gif" alt="ejemplo">
+
+        <p class="mt-2">Esta función devolverá un <strong>único resultado</strong>, resultante de aplicar una operación en la iteración del array junto a un valor propio de la función que funciona como <strong>acumulador</strong>.</p>
+
+        <p>Un ejemplo habitual es el de sumar el valor de los elementos de un array para tener un total. En el array <code>numeros = [5, 10, 2, 3, 20, 6];</code> si queremos obtener la suma de los valores sería tan sencillo como esto: <code>total = numeros.reduce(( v, ac) => v+ac );</code></p>
+
+        <p>Siguiendo con el array de frutas, si queremos obtener el total de los precios lo haríamos así: </p>
+
+        <pre class="bg-light"><code>
+          precioTotal = frutas.map(elem => elem-precio).reduce((v, ac) => v + ac );
+        </code></pre>
+
+        <p>En el ejemplo primero mapeamos el array para quedarnos solo con un array con los precios. A continuación aplicamos el <code>reduce</code> en donde <code>v</code> es el valor del array en cada iteración, y <code>ac</code> es el acumulador que por defecto empieza en 0. En cada iteración sumamos el valor actual del array con el valor actual del acumulador que se, valga la redundancia, acumula en este. El resultado es el siguiente: </p>
+
+        <pre class="bg-light"><code>
+          precioTotal = {{precioTotal}};
+        </code></pre>
+        
 
 
 

@@ -73,18 +73,14 @@ angular.module('universidadApp')
                     self.iconoOrden = "up";
                 }
 
-
             }
 
+        } // end controller
 
-
-        }
-
-
-    });
+    }); //end component
 
     angular.module('universidadApp').
-        filter('euros', function(){
+        filter('euros', function(){ // Filtro para poner una cantidad en euros con formato de esp
 
             return function(numero){
 
@@ -92,26 +88,17 @@ angular.module('universidadApp')
 
             }
 
-        });
+    });
 
     angular.module('universidadApp').
         filter('colores', function(){ // Filtro que saca los colores y evita que se repitan
 
             return function(a){
 
+                // Toma el valor, pj "Verde", mira el indice de la primera coincidencia de ese valor en el array y lo compara con el indice del "bucle" del filter
                 return a.map(e=>e.color).filter((v, i, a) => a.indexOf(v) === i);
 
             }
 
-        });    
-
-    angular.module('universidadApp').
-        filter('noRepetir', function(){ // 
-
-            return function(a){
-
-                return a.filter((v, i, a) => a.indexOf(v) === i);
-
-            }
-
-        });    
+    });    
+   

@@ -1,0 +1,17 @@
+<div>
+    
+    <input type="text" class="form-control" ng-model="campo" placeholder="Escribe valor de TIPPRODUCT pj: KT">
+    <button ng-click="filtrarTip(campo); accionRequerida = 'filtrarTip'" class="btn btn-info">Ejercicio 1</button>
+    
+    <button ng-click="obtenerCodContratos(); accionRequerida = 'obtenerCodsContrato'" class="btn btn-info">Ejercicio 2</button>
+
+    <button ng-click="obtenerContratosSituacion(); accionRequerida = 'obtenerContratosSituacion'" class="btn btn-info">Ejercicio 3</button>
+
+    <div>
+        <div ng-show="(accionRequerida == 'filtrarTip')"><pre>{{contratosPorNombre | json:4 }}</pre></div>
+        <div ng-show="(accionRequerida == 'obtenerCodsContrato')"><pre>{{codContratos | json:4 }}</pre></div>
+        <div ng-show="(accionRequerida == 'obtenerContratosSituacion')"><pre>{{contratosSituacion | json:4 }}</pre></div>
+    </div>
+    
+
+</div>

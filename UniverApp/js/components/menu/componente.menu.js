@@ -9,36 +9,18 @@ angular.module('universidadApp')
                   "path" : "#!/",
                   "active" : false,
                   "icono" : "fas fa-home"
-                },
-                {
-                  "nombre": "Profesores",
-                  "path" : "#!/profesores",
-                  "active" : false,
-                  "icono" : "fas fa-user-tie"
-                },
-                {
-                  "nombre": "Alumnos",
-                  "path" : "#!/alumnos",
-                  "active" : false,
-                  "icono" : "fas fa-home"
-                },
-                {
-                  "nombre": "Creditos",
-                  "path" : "#!/creditos",
-                  "active" : false,
-                  "icono" : "fas fa-home"
-                },
+                },           
                 {
                   "nombre": "Tareas",
                   "path" : "#!/tareas",
                   "active" : false,
-                  "icono" : "fas fa-home"
+                  "icono" : "fas fa-tasks"
                 },
                 {
                   "nombre": "Componentes",
                   "path" : "#!/componentes",
                   "active" : false,
-                  "icono" : "fas fa-home"
+                  "icono" : "fas fa-project-diagram"
                 },
                 {
                   "nombre": "Frutas",
@@ -50,13 +32,13 @@ angular.module('universidadApp')
                   "nombre": "Map, Filter, Reduce",
                   "path" : "#!/map-filter-reduce",
                   "active" : false,
-                  "icono" : "fas fa-carrot"
+                  "icono" : "fas fa-vector-square"
                 },
                 {
-                  "nombre": "Ejemplo Real (map, filter, etc)",
+                  "nombre": "Prog. Funcional (Contratos)",
                   "path" : "#!/programacion-funcional",
                   "active" : false,
-                  "icono" : "fas fa-carrot"
+                  "icono" : "fas fa-file-contract"
                 }
               ];
             

@@ -4,8 +4,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Universidad</title>
 
-        <!-- prueba de github -->
-
         <!-- Incluir Bootstrap -->
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
@@ -22,17 +20,22 @@
         <script src="js/lib/angular-route1.7.min.js"></script>
         <script src="js/lib/angular-sanitize.min.js"></script>
 
+
+        <!-- La aplicacion principal + controlador principal-->
         <script src="js/app.js"></script>
-        <script src="js/ejemplo-map-filter-reduce.js"></script>
-        <script src="js/contratos.js"></script>
+
+        <!-- Componentes -->
+        <script src="js/components/contratos/contratos-component.js"></script>
         <script src="js/components/listadoTareas/componente.lista-tareas.js"></script>
         <script src="js/components/menu/componente.menu.js"></script>
         <script src="js/components/alert/componente-alert.js"></script>
         <script src="js/components/listadoFrutas/componente.listado-frutas.js"></script>
-        
+
+        <!-- configuracion routing -->
         <script src="js/config.js"></script>
 
-        <!-- Nuestros controladores -->
+        <!-- Otros controladores -->
+        <script src="js/ejemplo-map-filter-reduce.js"></script>
 
         
 
@@ -47,7 +50,7 @@
 
         <menu-principal></menu-principal>
 
-       
+        
 
         <componente-alert ng-hide=(!alerta) clase="{{alerta.clase}}" texto="{{alerta.texto}}"></componente-alert>
 

@@ -67,6 +67,8 @@ angular.module('universidadApp')
 
         $scope.colores = $scope.frutasEjemplo.map(elem => elem.color).filter( (v, i, a) =>{
            return a.indexOf(v)===i
-          });
+        });
 
+
+        $scope.precioTotal = $scope.frutasEjemplo.map(elem => elem.precio).reduce( (v, ac) => v+ac);
     }]);

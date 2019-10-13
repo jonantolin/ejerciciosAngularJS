@@ -2,7 +2,7 @@ var app = angular.module('universidadApp',['ngRoute', 'ngSanitize']);
 
 app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
 
-  
+ 
 this.$onInit = function(){
     console.log('inicio main controller');
 
@@ -33,6 +33,8 @@ this.$onInit = function(){
     });
 
 
-};
+}; // end $onInit
+
+
 
 }]);
