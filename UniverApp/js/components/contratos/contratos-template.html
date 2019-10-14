@@ -7,10 +7,13 @@
 
     <button ng-click="obtenerContratosSituacion(); accionRequerida = 'obtenerContratosSituacion'" class="btn btn-info">Ejercicio 3</button>
 
+    <button ng-click="obtenerAcciones(); accionRequerida = 'obtenerAcciones'" class="btn btn-info">Ejercicio 4</button>
+
     <div>
         <div ng-show="(accionRequerida == 'filtrarTip')"><pre>{{contratosPorNombre | json:4 }}</pre></div>
         <div ng-show="(accionRequerida == 'obtenerCodsContrato')"><pre>{{codContratos | json:4 }}</pre></div>
         <div ng-show="(accionRequerida == 'obtenerContratosSituacion')"><pre>{{contratosSituacion | json:4 }}</pre></div>
+        <div ng-show="(accionRequerida == 'obtenerAcciones')"><pre>{{ejercicio4 | json:4 }}</pre></div>
     </div>
     
 

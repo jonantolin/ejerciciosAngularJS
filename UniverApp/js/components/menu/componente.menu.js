@@ -39,6 +39,12 @@ angular.module('universidadApp')
                   "path" : "#!/programacion-funcional",
                   "active" : false,
                   "icono" : "fas fa-file-contract"
+                },
+                {
+                  "nombre": "Promesas",
+                  "path" : "#!/promesas",
+                  "active" : false,
+                  "icono" : "fas fa-file-contract"
                 }
               ];
             
