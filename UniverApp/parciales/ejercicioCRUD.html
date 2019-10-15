@@ -1,8 +1,9 @@
 <h2>Canciones</h2>
 
-<button class="btn btn-info" ng-click="nuevaCancion={id:'', nombre:''}">Nueva canción</button>
+
 
 <div ng-controller="CrudController">
+    <button class="btn btn-info" ng-click="cancion = {'id': -1, 'nombre': ''}">Nueva canción</button>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -25,27 +26,17 @@
 
     <div ng-show="cancion != null" class="border border-sm shadow p-2">
 
-        <h4>Detalle canción</h4>
-        <div ng-show="cancion.id != ''">
+        <h4>{{(cancion.id != -1)?'Modicar canción':'Nueva canción'}}</h4>
+        <div ng-show="cancion.id != -1">
             <label>Id: </label>
             <input class="form-control" type="text" ng-model="cancion.id" readonly><br>
         </div>
         <label>Nombre: </label>
         <input class="form-control" type="text" ng-model="cancion.nombre">
-        <button class="btn btn-success" ng-show="cancion.id != ''" ng-click="modificar(cancion); cancion = null">Guardar</button>
+        <button class="btn btn-success" ng-show="cancion.id == -1" ng-click="crear(cancion.nombre); cancion = null">Crear</button>
+        <button class="btn btn-success" ng-show="cancion.id != -1" ng-click="modificar(cancion); cancion = null">Guardar</button>
         <span class="btn btn-outline-danger" ng-click="cancion = null" >Cancelar</span>
 
     </div>
 
-    <div ng-show="nuevaCancion != null" class="border border-sm shadow p-2">
-
-            <h4>Nueva canción</h4>
-       
-            <label>Nombre: </label>
-            <input class="form-control" type="text" ng-model="nuevaCancion.nombre">
-            
-            <button class="btn btn-success" ng-click="crear(nuevaCancion.nombre); nuevaCancion = null">Crear</button>
-            <span class="btn btn-outline-danger" ng-click="nuevaCancion = null" >Cancelar</span>
-    
-        </div>
 </div>

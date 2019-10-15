@@ -43,7 +43,7 @@ angular.module('universidadApp')
               $scope.contratosSituacion = $scope.contratos.filter(c => {
 
                 if(c.ACCIONES != undefined){
-
+                  
                   return c.ACCIONES.filter(ac => ac.clave == "SITUACION").length === 1; // PREGUNTAR por esta linea
                 }else{
 
