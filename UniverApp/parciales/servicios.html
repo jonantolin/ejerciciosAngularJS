@@ -1,0 +1,65 @@
+<div ng-controller="servicesController">
+
+    <h2>{{titulo}}</h2>
+
+    <ol>
+        <li>Constantes</li>
+        <li>Valores</li>
+        <li>Servicios</li>
+        <li>Factorias</li>
+        <li>Proveedores</li>
+    </ol>
+
+    <p>Los nombres de los servicios deben seguir la misma nomenclatura que los nombre de las variables. Es decir que la primera palabra debe ser en minúscula y el resto de palabras deben empezar en mayúscula (ver CamelCase).</p>
+
+    <div class="card">
+        <h5 class="card-header">Constantes</h5>
+        <div class="card-body">
+          <h5 class="card-title">Uso y descripción</h5>
+          <p class="card-text">Este servicio permite declarar constantes y usarlas en cualquier parte de nuestra app </p>
+          <p class="card-text">Lo hacemos así: Declaramos el servicio (en este caso en app.js) </p>
+          <pre class="bg-light"><code>
+            app.constant("servicioConstantes", {"titulo": "AngularApp",
+                                    "idioma": "es-ES",
+                                    "version": "1.0",
+                                    "autor": "Jon Antolin",
+                                    "github": "https://github.com/jonantolin/ejerciciosAngularJS" });
+          </code></pre>
+
+          <p class="card-text">Y en el controllador inyectamos el servicio junto a los ya conocidos (como <code>$http</code>)</p>
+          <pre class="bg-light"><code>
+            app.controller('mainCtrl', ['$scope','$http', 'servicioConstantes', function($scope,$http,servicioConstantes){ ...
+          </code></pre>
+
+          <p class="card-text">Por último, para poder verlo en la vista, tenemos que recogerlo en una constante e imprimir ésta.</p>
+          <pre class="bg-light"><code>
+            $scope.constantes = servicioConstantes;
+          </code></pre>
+          <p class="card-text">El resultado lo podemos ver en el footer donde he ido imprimiendo los valores de los atributos de la constante</p>
+        </div>
+    </div>
+
+    <div class="card">
+            <h5 class="card-header">Values</h5>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">Parecido a constantes pero con valores que pueden cambiar</p>
+
+            </div>
+    </div>
+
+    <div class="card">
+            <h5 class="card-header">Services</h5>
+            <div class="card-body">
+              <h5 class="card-title">Uso y descripción</h5>
+              <p class="card-text">Los services nos son útiles para declarar funciones y tenerlas accesibles inyectándolas donde queramos</p>
+              <pre class="bg-light"><code>
+
+                area1 = {{area}}
+                area2 = {{area2}}
+              </code></pre>
+            </div>
+    </div>
+
+</div>
+
