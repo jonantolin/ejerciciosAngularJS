@@ -2,28 +2,10 @@
 
 
 
-<div ng-controller="CrudController">
-    <button class="btn btn-info" ng-click="cancion = {'id': -1, 'nombre': ''}">Nueva canción</button>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="cancion in canciones">
-                <th scope="row">{{cancion.id}}</th>
-                <td>{{cancion.nombre}}
-                    <div class="float-right">
-                        <i class=" text-info fas fa-eye" ng-click="detalle(cancion.id)"></i>
-                        <i class="text-danger far fa-trash-alt" ng-click="eliminar(cancion.id)"></i>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>  
-
+<div ng-controller="CrudController" class="w-75">
+    
+    <button class="btn btn-info" ng-click="nuevaCancion()">Nueva canción</button>
+    <span ng-show="alerta != null"><componente-alert clase="{{alerta.clase}}" texto="{{alerta.texto}}"></componente-alert></span>
     <div ng-show="cancion != null" class="border border-sm shadow p-2">
 
         <h4>{{(cancion.id != -1)?'Modicar canción':'Nueva canción'}}</h4>
@@ -32,11 +14,32 @@
             <input class="form-control" type="text" ng-model="cancion.id" readonly><br>
         </div>
         <label>Nombre: </label>
-        <input class="form-control" type="text" ng-model="cancion.nombre">
-        <button class="btn btn-success" ng-show="cancion.id == -1" ng-click="crear(cancion.nombre); cancion = null">Crear</button>
-        <button class="btn btn-success" ng-show="cancion.id != -1" ng-click="modificar(cancion); cancion = null">Guardar</button>
-        <span class="btn btn-outline-danger" ng-click="cancion = null" >Cancelar</span>
+        <input class="form-control" type="text" ng-model="cancion.nombre"><br>
+        <a class="btn btn-success {{((cancion.nombre).length <= 2 || (cancion.nombre).length >= 150)?'disabled':''}}" ng-show="cancion.id == -1" ng-click="crear(cancion.nombre);">Crear</a>
+        <a class="btn btn-success  {{((cancion.nombre).length <= 2 || (cancion.nombre).length >= 150)?'disabled':''}}" ng-show="cancion.id != -1" ng-click="modificar(cancion);">Guardar</a>
+        <a class="btn btn-outline-danger" ng-click="cancion = null" >Cancelar</a>
+        <span class="ml-3 text-danger" ng-show="((cancion.nombre).length <= 2 || (cancion.nombre).length >= 150)">Escribe un nombre de cancion válido (3-150 caracteres)</span>
 
     </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col" ng-click="ordenar('id')" >Id <span ng-show="orden == 'id'"><i class="fas fa-sort-{{iconoOrden}}"></i></span> </th>
+            <th scope="col" ng-click="ordenar('nombre')">Nombre <span ng-show="orden == 'nombre'"><i class="fas fa-sort-{{iconoOrden}}"></i></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cancion in canciones | orderBy: orden : descendente ">
+                <td>{{cancion.id}}</th>
+                <td>{{cancion.nombre}}
+                    <div class="float-right">
+                        <i class=" text-info far fa-edit" ng-click="detalle(cancion.id)"></i>
+                        <i class="text-danger far fa-trash-alt" ng-click="eliminar(cancion.id)"></i>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>  
+    
 
 </div>

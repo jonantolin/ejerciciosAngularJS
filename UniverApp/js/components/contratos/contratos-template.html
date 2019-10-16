@@ -1,6 +1,6 @@
 <div>
     
-    <input type="text" class="form-control" ng-model="campo" placeholder="Escribe valor de TIPPRODUCT pj: KT">
+    <input type="text" class="form-control" ng-model="campo" ng-init="campo = 'KT'" placeholder="Escribe valor de TIPPRODUCT pj: KT">
     <button ng-click="filtrarTip(campo); accionRequerida = 'filtrarTip'" class="btn btn-info">Ejercicio 1</button>
     
     <button ng-click="obtenerCodContratos(); accionRequerida = 'obtenerCodsContrato'" class="btn btn-info">Ejercicio 2</button>
