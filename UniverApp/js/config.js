@@ -29,6 +29,9 @@ app.config( function( $routeProvider ){
     .when('/ejercicioCRUD',{
       templateUrl: 'parciales/ejercicioCRUD.html'
     })
+    .when('/formularios',{
+      templateUrl: 'parciales/formularios.html'
+    })
     .otherwise({
       redirectTo: '/'
     })

@@ -1,0 +1,30 @@
+
+<div ng-controller="formulariosController">
+
+    <h2>Validaciones de AngularJS para formularios</h2>
+
+    <div class="row">
+        <div class="col-6">
+            <form name="formulario" ng-submit="guardar_datos()" novalidate>
+                <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" ng-model="datosForm.nombre" placeholder="Introduce nombre">
+                
+                </div>
+                <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" ng-model="datosForm.email" placeholder="Introduce direccion email">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+
+        </div>
+
+        <div class="col-5">
+            {{datosForm | json}}
+        </div>
+
+    </div>
+
+</div>

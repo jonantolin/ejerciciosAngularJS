@@ -37,6 +37,7 @@
          <script src="js/promesas-controller.js"></script>
          <script src="js/servicios-controller.js"></script>
          <script src="js/CrudController.js"></script>
+         <script src="js/formulariosController.js"></script>
 
         <!-- Componentes -->
         <script src="js/components/contratos/contratos-component.js"></script>
@@ -48,32 +49,17 @@
         <!-- configuracion routing -->
         <script src="js/config.js"></script>
 
-       
-
-        
-
-
-
     </head>
     <body>
 
-
-        
-
-
         <menu-principal></menu-principal>
 
-        
-
         <componente-alert ng-hide=(!alerta) clase="{{alerta.clase}}" texto="{{alerta.texto}}"></componente-alert>
-
 
         <div class="container mb-5">
         <!-- La pagina principal ira aquí -->
         <div ng-view></div>
-
-
-        
+ 
         </div><!-- /.container -->
 
         <ng-include src="'parciales/footer.html'"></ng-include>

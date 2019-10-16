@@ -57,6 +57,12 @@ angular.module('universidadApp')
                   "path" : "#!/ejercicioCRUD",
                   "active" : false,
                   "icono" : "fas fa-file-contract"
+                },
+                {
+                  "nombre": "Formularios",
+                  "path" : "#!/formularios",
+                  "active" : false,
+                  "icono" : "fas fa-file-contract"
                 }
               ];
             

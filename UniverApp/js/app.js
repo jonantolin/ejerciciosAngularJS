@@ -63,10 +63,7 @@ app.value("tamanyoInicialRectangulo",{
 // Y ahora nos queda inyectar el value “tamanyoInicialRectangulo” en el constructor de “Rectangulo” y AngularJS por suerte ya tiene esa funcionalidad programada
 app.service("rectangulo2",['tamanyoInicialRectangulo',Rectangulo2]);
 
-
 // Providers
-
-
 
 app.service('cancionProvider', CancionProvider);
 
