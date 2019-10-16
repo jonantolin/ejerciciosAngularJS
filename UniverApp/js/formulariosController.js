@@ -4,10 +4,14 @@ app.controller('formulariosController', ['$scope', function formulariosControlle
 
     $scope.datosForm = {};
 
-    $scope.guardar_datos = function() {
+    $scope.guardar_datos = function(valido) { //recibe $valid desde la view que indica si los datos pasan la validacion
 
 
-        console.log('Posteando datos...........');
+        if(!valido){ // si no pasa la validacion, no hago nada, retorno nada
+            return;
+        }
+
+        console.log('Ha pasado la validacion y los datos van al server...........');
     }
 
 

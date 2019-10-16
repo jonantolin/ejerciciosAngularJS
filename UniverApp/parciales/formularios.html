@@ -5,15 +5,28 @@
 
     <div class="row">
         <div class="col-6">
-            <form name="formulario" ng-submit="guardar_datos()" novalidate>
+
+            <!-- Angular lee si el form tiene un name y crea una variable en el scope con ese nombre
+                Los campos con name son agregados al objeto del scope, a su vez estos con otras variables
+            VARIABLES: 
+            $valid -> Indica si el formulario o campo pasa la validacion
+            $pristine -> podria traducirse como "pristino", es decir sin tocar, 
+                         si se escribe en un campo el $pristine del campo y el $pristine del formulario cambian a false
+            $error -> contiene todas las violaciones de validacion, con atributos internos pj: $error.email.required -->
+            <form name="formulario" ng-submit="guardar_datos( formulario.$valid )" novalidate> <!-- al sumitar envio el booleano que dice si los datos cumplen o no la validacion -->
                 <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" ng-model="datosForm.nombre" placeholder="Introduce nombre">
-                
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" ng-class="{'is-valid': formulario.nombre.$valid && !formulario.nombre.$pristine,
+                                                                        'is-invalid': !formulario.nombre.$valid && !formulario.nombre.$pristine }" 
+                    id="nombre" name="nombre" ng-model="datosForm.nombre" placeholder="Introduce nombre" required minlength="2" maxlength="50">
+                    <p class="invalid-feedback" id="texto-ayuda">Entre 2-50 caracteres</p>
                 </div>
                 <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" ng-model="datosForm.email" placeholder="Introduce direccion email">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" ng-class="{'is-valid': formulario.email.$valid && !formulario.email.$pristine,
+                                                                        'is-invalid': !formulario.email.$valid && !formulario.email.$pristine }"
+                    id="email" name="email" ng-model="datosForm.email" placeholder="Introduce direccion email" required>
+                    <p class="invalid-feedback" id="texto-ayuda">Una dirección email válida, pj: ejemplo@gmail.com</p>
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -21,8 +34,8 @@
 
         </div>
 
-        <div class="col-5">
-            {{datosForm | json}}
+        <div class="col-5 bg-light">
+            <pre>{{formulario | json}}</pre>
         </div>
 
     </div>
