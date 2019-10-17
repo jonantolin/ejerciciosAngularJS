@@ -63,6 +63,12 @@ angular.module('universidadApp')
                   "path" : "#!/formularios",
                   "active" : false,
                   "icono" : "fas fa-file-contract"
+                },
+                {
+                  "nombre": "Pokemones",
+                  "path" : "#!/pokemones",
+                  "active" : false,
+                  "icono" : "fas fa-file-contract"
                 }
               ];
             

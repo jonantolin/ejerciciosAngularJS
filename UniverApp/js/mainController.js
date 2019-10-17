@@ -8,40 +8,42 @@ app.controller('mainCtrl', ['$scope','$http', 'servicioConstantes', 'rectanguloS
 
 
 this.$onInit = function(){
-console.log('inicio main controller');
+    console.log('inicio main controller');
 
-/*$scope.alerta = {
-"texto" : "Ongi etorri",
-"clase" : "success"
-};*/    
+    /*$scope.alerta = {
+    "texto" : "Ongi etorri",
+    "clase" : "success"
+    };*/    
 
-$scope.constantes = servicioConstantes;
+    $scope.constantes = servicioConstantes;
 
 
 
-let url = "http://localhost:3000/";
+    let url = "http://localhost:3000/";
 
-$http.get(url).then(function(response){
+    $http.get(url).then(function(response){
 
-console.trace('servicio rest funcionando %o', response);
-/*$scope.alerta = {
-"texto" : "<strong>Yujuuuuu</strong> Esta funcionando Servicio Rest",
-"clase" : "success"
-};
-*/
+        console.trace('servicio rest funcionando %o', response);
+        /*$scope.alerta = {
+        "texto" : "<strong>Yujuuuuu</strong> Esta funcionando Servicio Rest",
+        "clase" : "success"
+        };
+        */
 
-},function(response){
+        },function(response){
 
-console.warn('servicio rest fallando %o', response);
-$scope.alerta = {
-"texto" : "<strong>Upssssss</strong> Servicio Rest parado",
-"clase" : "danger"
-};
-});
+        console.warn('servicio rest fallando %o', response);
+        $scope.alerta = {
+        "texto" : "<strong>Upssssss</strong> Servicio Rest parado",
+        "clase" : "danger"
+        };
+    });
 
 
 }; // end $onInit
 
+/*
 
+*/
 
 }]);

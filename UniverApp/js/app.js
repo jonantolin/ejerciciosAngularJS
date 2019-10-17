@@ -67,3 +67,5 @@ app.service("rectangulo2",['tamanyoInicialRectangulo',Rectangulo2]);
 
 app.service('cancionProvider', CancionProvider);
 
+app.service('PokemonProvider', PokemonProvider);
+

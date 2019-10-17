@@ -1,0 +1,20 @@
+<h3>Pokémons</h3>
+
+<div ng-controller="pokemonesController">
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="pokemon in pokemones">
+                <td>{{pokemon.name}}
+                    <a href="#!/pokemon/{{pokemon.name}}"><i class=" text-info far fa-eye"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>  
+</div>    

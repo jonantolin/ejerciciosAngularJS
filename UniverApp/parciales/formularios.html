@@ -29,7 +29,7 @@
                     <p class="invalid-feedback" id="texto-ayuda">Una dirección email válida, pj: ejemplo@gmail.com</p>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" ng-disabled="!formulario.$valid" class="btn btn-primary">Guardar</button>
             </form>
 
         </div>
