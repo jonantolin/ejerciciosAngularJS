@@ -68,7 +68,7 @@ angular.module('universidadApp')
                   "nombre": "Pokemones",
                   "path" : "#!/pokemones",
                   "active" : false,
-                  "icono" : "fas fa-file-contract"
+                  "icono" : "fas fa-bug"
                 }
               ];
             

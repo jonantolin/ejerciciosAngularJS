@@ -20,3 +20,26 @@
 th{
   cursor: pointer;
 }
+
+.icono-detalle{
+  display:none;
+}
+
+td.pokemon a{
+  text-decoration: none;
+}
+
+td.pokemon:hover a{
+  color:white;
+}
+
+td.pokemon:hover{
+  background-color: rgb(68, 61, 61);
+  color:white;
+}
+
+td.pokemon:hover .icono-detalle{
+
+  display:inline;
+
+}

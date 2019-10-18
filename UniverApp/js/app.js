@@ -69,3 +69,26 @@ app.service('cancionProvider', CancionProvider);
 
 app.service('PokemonProvider', PokemonProvider);
 
+/**
+ * Filtro personalizado para capitalizar strings
+ */
+
+app.filter('capitalizar', function(){ // Filtro para poner la primera letra en Mayusculas de un texto
+
+    return function(texto){
+
+        return texto.charAt(0).toUpperCase() + texto.slice(1);
+
+    }
+
+});
+
+app.filter('capitalizarCacho', function(){
+
+  return function(texto, inicio, fin){
+
+    return textoDevuelto = texto.slice(0, inicio) + texto.slice(inicio,fin).toUpperCase()+ texto.slice(fin);
+
+  }
+});
+
