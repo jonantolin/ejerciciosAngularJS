@@ -10,7 +10,7 @@ function pokemonesController($scope, pokemonProvider){
         $scope.descendente = false;
         $scope.iconoOrden = "";
 
-        $scope.pagina = 0;
+        $scope.pagina = 1;
         $scope.posicion = 20; // estara paginado de 20 en 20
 
         $scope.viernes = "hoy es viernes";
@@ -42,7 +42,7 @@ function pokemonesController($scope, pokemonProvider){
         $scope.orden = campo;
         $scope.descendente = !$scope.descendente;
         $scope.posicion = 20;
-        $scope.pagina = 0;
+        $scope.pagina = 1;
 
         if($scope.descendente){
             $scope.iconoOrden = "down";
