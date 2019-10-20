@@ -6,11 +6,18 @@
     </p>
 
 
+   
     <div class=" col-6 border border-info shadow p-2 my-2">
         <label for="">Buscar pokemon</label>
         <input type="text" class="form-control" placeholder="Busca pokemon" ng-model="busqueda.name">
     </div>
-    <table class="table table-striped col-7">
+    <div class="col-8 my-2 d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary d-inline" ng-click="anteriorPagina()" ng-disabled="pagina==0">Anterior</button>
+        <span class="mx-2">Pagina {{(pagina + 1)}}</span>
+        <button class="btn btn-primary d-inline" ng-click="siguientePagina()" ng-disabled="posicion>=964">Siguiente</button>
+    </div>
+    
+    <table class="table table-striped col-8">
         <thead>
             <tr>
             <th scope="col" ng-click="ordenar('name')">Nombre <span ng-show="orden == 'name'"><i class="fas fa-sort-{{iconoOrden}}"></i></span></th>
@@ -20,7 +27,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="pokemon in pokemones | filter: busqueda |orderBy: orden : descendente" class="pokemon">
+            <tr ng-repeat="pokemon in pokemones | filter: busqueda |orderBy: orden : descendente | limitTo: posicion | limitTo: -20" class="pokemon">
                  
                     <td class="p-2">
                         {{pokemon.name | capitalizar}}                   
@@ -50,10 +57,10 @@
                                         <div class="row">
                                             <div class="col-5 d-flex align-items-center justify-content-center"><img ng-src="{{pokemon.sprites.front_shiny}}" alt="{{pokemon.name}}"></div>
                                             <div class="col-6">
-                                                <p>Tipo: {{pokemon.types[0].type.name | capitalizar}}</p>
-                                                <p>Experiencia base: {{pokemon.base_experience}} </p>
-                                                <p>Altura: {{pokemon.height}} </p>
-                                                <p>Peso: {{pokemon.weight}}</p>
+                                                <p><span class="font-weight-bold">Tipo:</span> {{pokemon.types[0].type.name | capitalizar}}</p>
+                                                <p><span class="font-weight-bold">Experiencia base:</span> {{pokemon.base_experience}} </p>
+                                                <p><span class="font-weight-bold">Altura:</span> {{pokemon.height}} </p>
+                                                <p><span class="font-weight-bold">Peso:</span> {{pokemon.weight}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -69,6 +76,11 @@
             </tr>
         </tbody>
     </table> 
+    <div class="col-8 my-2 d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary d-inline" ng-click="anteriorPagina()" ng-disabled="pagina==0">Anterior</button>
+        <span class="mx-2">Pagina {{(pagina + 1)}}</span>
+        <button class="btn btn-primary d-inline" ng-click="siguientePagina()" ng-disabled="posicion>=964">Siguiente</button>
+    </div>
     
     
 </div>    

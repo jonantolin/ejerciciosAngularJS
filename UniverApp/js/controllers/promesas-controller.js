@@ -5,8 +5,8 @@ app.controller('promesasController', ['$scope', '$http', '$q', '$timeout',
     console.trace('promesasController');    
 
     $scope.titulo = "Promesas - Ejercicio";
-    $scope.resultado1 = "sumnado....";
-    $scope.resultado2 = "sumnado....";
+    $scope.resultado1 = "sumando....";
+    $scope.resultado2 = "sumando....";
     $scope.resultadoTotal = "Esperando...";
 
     /**

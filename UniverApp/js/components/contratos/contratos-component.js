@@ -58,12 +58,14 @@ angular.module('universidadApp')
             $scope.obtenerAcciones = function(){
 
               $scope.ejercicio4 = [...new Set( $scope.contratos.map( e => {
-                if (e.ACCIONES){
+                if (e.ACCIONES != undefined){
                  //return e.ACCIONES.titulo
                     
                  return e.ACCIONES.map( v => 
                      { 
-                         return  v.titulo 
+                       
+                         return  v.titulo
+                        
                      });
                     
              } 

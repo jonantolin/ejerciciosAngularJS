@@ -2,8 +2,8 @@ function pokemonProvider($http, $q){
 
 
   console.log('entra PokemonProvider');
-  const ENDPOINT = "https://pokeapi.co/api/v2/pokemon/";
- 
+  const ENDPOINT = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964"; //existen 964 pokemones
+  const ENDPOINT_DET = "https://pokeapi.co/api/v2/pokemon/";
 
 
   /**
@@ -107,7 +107,7 @@ function pokemonProvider($http, $q){
    
 
   this.detalle = function (nombrePokemon){
-    let url = ENDPOINT + nombrePokemon;
+    let url = ENDPOINT_DET + nombrePokemon;
     console.log('CancionProvider detalle');
     return $http.get(url);
   }  
