@@ -21,25 +21,22 @@ th{
   cursor: pointer;
 }
 
-.icono-detalle{
-  display:none;
-}
-
-td.pokemon a{
+tr.pokemon a{
   text-decoration: none;
+  width: 100%;
+  
 }
 
-td.pokemon:hover a{
+tr.pokemon:hover a{
   color:white;
 }
 
-td.pokemon:hover{
-  background-color: rgb(68, 61, 61);
+tr.pokemon:hover{
+  background-color: rgb(68, 61, 61) !important;
   color:white;
 }
 
-td.pokemon:hover .icono-detalle{
 
-  display:inline;
-
+div.modal-body, h5.modal-title{
+  color: black;
 }

@@ -2,24 +2,70 @@
 
 <div ng-controller="pokemonesController">
 
-    <p>{{viernes | capitalizarCacho:7:10}}
+    <p>{{viernes | capitalizarCacho: 7 : 10}}
     </p>
+
 
     <div class=" col-6 border border-info shadow p-2 my-2">
         <label for="">Buscar pokemon</label>
         <input type="text" class="form-control" placeholder="Busca pokemon" ng-model="busqueda.name">
     </div>
-    <table class="table table-striped col-4">
+    <table class="table table-striped col-7">
         <thead>
             <tr>
             <th scope="col" ng-click="ordenar('name')">Nombre <span ng-show="orden == 'name'"><i class="fas fa-sort-{{iconoOrden}}"></i></span></th>
+            <th scope="col" ng-click="ordenar('types[0].type.name')">Tipo <span ng-show="orden == 'types[0].type.name'"><i class="fas fa-sort-{{iconoOrden}}"></i></span></th>
+            <th scope="col" ng-click="ordenar('base_experience')">Exp. Base <span ng-show="orden == 'base_experience'"><i class="fas fa-sort-{{iconoOrden}}"></i></span></th>
+            <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="pokemon in pokemones | filter: busqueda |orderBy: orden : descendente">
-                <td class="pokemon p-0">
-                    <a href="#!/pokemon/{{pokemon.name}}" class="d-block p-2"> {{pokemon.name | capitalizar}} <i class=" text-info far fa-eye icono-detalle"></i> </a>  
-                </td>
+            <tr ng-repeat="pokemon in pokemones | filter: busqueda |orderBy: orden : descendente" class="pokemon">
+                 
+                    <td class="p-2">
+                        {{pokemon.name | capitalizar}}                   
+                    </td>
+                    <td class="p-2">
+                       {{pokemon.types[0].type.name | capitalizar}}   
+                    </td>
+                    <td class="p-2">
+                        {{pokemon.base_experience}}
+                    </td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#{{pokemon.name}}">
+                        Detalle
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="{{pokemon.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title detalle" id="exampleModalCenterTitle">{{pokemon.name | capitalizar}} </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body detalle">
+                                        <div class="row">
+                                            <div class="col-5 d-flex align-items-center justify-content-center"><img ng-src="{{pokemon.sprites.front_shiny}}" alt="{{pokemon.name}}"></div>
+                                            <div class="col-6">
+                                                <p>Tipo: {{pokemon.types[0].type.name | capitalizar}}</p>
+                                                <p>Experiencia base: {{pokemon.base_experience}} </p>
+                                                <p>Altura: {{pokemon.height}} </p>
+                                                <p>Peso: {{pokemon.weight}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+     
             </tr>
         </tbody>
     </table> 

@@ -1,4 +1,4 @@
-app.controller('pokemonController', ['$scope', '$routeParams', 'PokemonProvider', 
+app.controller('pokemonController', ['$scope', '$routeParams', 'pokemonProvider', 
 function pokemonController($scope, $routeParams, pokemonProvider){
 
 

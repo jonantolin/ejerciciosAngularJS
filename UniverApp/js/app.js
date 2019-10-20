@@ -67,7 +67,7 @@ app.service("rectangulo2",['tamanyoInicialRectangulo',Rectangulo2]);
 
 app.service('cancionProvider', CancionProvider);
 
-app.service('PokemonProvider', PokemonProvider);
+app.service('pokemonProvider', pokemonProvider);
 
 /**
  * Filtro personalizado para capitalizar strings
@@ -87,7 +87,7 @@ app.filter('capitalizarCacho', function(){
 
   return function(texto, inicio, fin){
 
-    return textoDevuelto = texto.slice(0, inicio) + texto.slice(inicio,fin).toUpperCase()+ texto.slice(fin);
+    return texto.slice(0, inicio) + texto.slice(inicio,fin).toUpperCase()+ texto.slice(fin);
 
   }
 });
