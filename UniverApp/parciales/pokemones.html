@@ -9,14 +9,20 @@
    
     <div class=" col-6 border border-info shadow p-2 my-2">
         <label for="">Buscar pokemon</label>
-        <input type="text" class="form-control" placeholder="Busca pokemon" ng-model="busqueda.name" ng-change="pagina=1; posicion=20;">
+        <input type="text" class="form-control" placeholder="Busca pokemon" ng-init="busqueda.name=''" ng-model="busqueda.name" ng-change="pagina=1; posicion=20; resultados=true;">
     </div>
     <div class="col-8 my-2 d-flex justify-content-center align-items-center">
         <button class="btn btn-primary d-inline" ng-click="anteriorPagina()" ng-disabled="pagina==1">Anterior</button>
-        <div class="mx-2">Pagina {{(pagina)}} <span  ng-hide="(busqueda.name).length > 0">| Del {{pagina * 20 - 20 + 1}} al {{pagina * 20}}</span> </div>
-        <button class="btn btn-primary d-inline" ng-click="siguientePagina()" ng-disabled="posicion>=964">Siguiente</button>
+        <div class="mx-2">Pagina {{(pagina)}} 
+            <span>| Del {{(pagina * 20 > (pokemones | filter:busqueda).length && (pokemones | filter:busqueda).length - 20 > 0)?(pokemones | filter:busqueda).length - 20:pagina * 20 - 20 + 1}} al
+                {{(pagina * 20 > (pokemones | filter:busqueda).length)?(pokemones | filter:busqueda).length:pagina*20}}
+            </span>
+        </div>
+        <button class="btn btn-primary d-inline" ng-click="siguientePagina()" 
+        ng-disabled="posicion >= (pokemones | filter:busqueda).length">Siguiente</button>
     </div>
     
+    <div ng-hide="busqueda.name.length == 0">Resultados: {{(pokemones | filter: busqueda).length}} pokemons</div>
     <table class="table table-striped col-8">
         <thead>
             <tr>
@@ -76,10 +82,15 @@
             </tr>
         </tbody>
     </table> 
-    <div class="col-8 my-2 d-flex justify-content-center align-items-center">
+   <div class="col-8 my-2 d-flex justify-content-center align-items-center">
         <button class="btn btn-primary d-inline" ng-click="anteriorPagina()" ng-disabled="pagina==1">Anterior</button>
-        <div class="mx-2">Pagina {{(pagina)}} <span  ng-hide="(busqueda.name).length > 0">| Del {{pagina * 20 - 20 + 1}} al {{pagina * 20}}</span> </div>
-        <button class="btn btn-primary d-inline" ng-click="siguientePagina()" ng-disabled="posicion>=964">Siguiente</button>
+        <div class="mx-2">Pagina {{(pagina)}} 
+            <span>| Del {{(pagina * 20 > (pokemones | filter:busqueda).length && (pokemones | filter:busqueda).length - 20 > 0)?(pokemones | filter:busqueda).length - 20:pagina * 20 - 20 + 1}} al
+                {{(pagina * 20 > (pokemones | filter:busqueda).length)?(pokemones | filter:busqueda).length:pagina*20}}
+            </span>
+        </div>
+        <button class="btn btn-primary d-inline" ng-click="siguientePagina()" 
+        ng-disabled="posicion >= (pokemones | filter:busqueda).length">Siguiente</button>
     </div>
     
     

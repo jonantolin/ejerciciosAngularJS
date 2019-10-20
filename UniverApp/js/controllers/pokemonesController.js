@@ -9,6 +9,7 @@ function pokemonesController($scope, pokemonProvider){
         $scope.orden = "name";
         $scope.descendente = false;
         $scope.iconoOrden = "";
+        
 
         $scope.pagina = 1;
         $scope.posicion = 20; // estara paginado de 20 en 20
