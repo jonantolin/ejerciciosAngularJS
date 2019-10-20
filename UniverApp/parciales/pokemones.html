@@ -22,7 +22,7 @@
         ng-disabled="posicion >= (pokemones | filter:busqueda).length">Siguiente</button>
     </div>
     
-    <div ng-hide="busqueda.name.length == 0">Resultados: {{(pokemones | filter: busqueda).length}} pokemons</div>
+    <h5 ng-hide="busqueda.name.length == 0" class="my-2">Resultado búsqueda: {{(pokemones | filter: busqueda).length}} pokémons</h5>
     <table class="table table-striped col-8">
         <thead>
             <tr>
