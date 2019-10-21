@@ -92,3 +92,13 @@ app.filter('capitalizarCacho', function(){
   }
 });
 
+app.filter('euros', function(){ // Filtro para poner una cantidad en euros con formato de esp
+
+  return function(numero){
+
+      return numero.replace(".", ",") +" €";
+
+  }
+
+});
+

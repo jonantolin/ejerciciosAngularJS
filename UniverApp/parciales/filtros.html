@@ -1,0 +1,52 @@
+<h2>Filtros</h2>
+
+<p>Podemos usar los filtros nativos del core de AngularJS (<a href="#!/ejercicio1">ver Ejercicio1</a>) o crear nuestros 
+propios filtros, como estos que he ido creando: </p>
+
+<pre class="bg-light"><code>
+
+        // Filtro para poner la primera letra en Mayusculas de un texto
+        app.filter('capitalizar', function(){ 
+
+            return function(texto){
+        
+                return texto.charAt(0).toUpperCase() + texto.slice(1);
+        
+            }
+        
+        });
+</code></pre>
+<p>Frase orginal: "hoy es viernes" </p>
+<p> Aplicando filtro -> {{viernes | capitalizar}}</p>
+
+<pre class="bg-light"><code>
+        //filtro para poner en mayus las partes que queramos
+        app.filter('capitalizarCacho', function(){
+
+            return function(texto, inicio, fin){
+          
+              return texto.slice(0, inicio) + texto.slice(inicio,fin).toUpperCase()+ texto.slice(fin);
+          
+            }
+          });
+</code></pre>
+
+<p>Frase orginal: "hoy es viernes" </p>
+<p> Aplicando filtro -> {{viernes | capitalizarCacho: 7: 10}}</p>
+
+<pre class="bg-light"><code>
+
+        // Filtro para poner una cantidad en euros con formato de esp
+        app.filter('euros', function(){ 
+
+            return function(numero){
+          
+                return numero.replace(".", ",") +" €";
+          
+            }
+          
+          });
+</code></pre>
+
+<p>Número original: 78.95 </p>
+<p> Aplicando filtro -> {{dineroPrueba | number | euros}}</p>

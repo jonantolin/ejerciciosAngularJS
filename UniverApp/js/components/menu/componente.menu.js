@@ -65,6 +65,12 @@ angular.module('universidadApp')
                   "icono" : "fas fa-file-contract"
                 },
                 {
+                  "nombre": "Filtros",
+                  "path" : "#!/filtros",
+                  "active" : false,
+                  "icono" : "fas fa-file-contract"
+                },
+                {
                   "nombre": "Pokemones",
                   "path" : "#!/pokemones",
                   "active" : false,

@@ -19,6 +19,8 @@ this.$onInit = function(){
 
     $scope.viernes = "hoy es viernes";
 
+    $scope.dineroPrueba = 78.95;
+
     let url = "http://localhost:3000/";
 
     $http.get(url).then(function(response){

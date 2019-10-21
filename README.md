@@ -10,7 +10,7 @@ seguiremos aumentando progresivamente la complejidad a medida que vayamos aprend
 
 <p>Cada ejercicio trata un tema en particular pero segun se van complicando aparecen nuevas características que no necesariamente tienen su propio apartado</p>
 <p>Algunas de estas características están explicadas en los comentarios del código o son intuitivas para un programador</p>
-<p>Algunas de estas características (como filtros, services, etc) aparecen en mainController.js que, obviamente, es el controlador principal de la app</p>
+<p>Algunas de estas características (como filtros, services, etc) aparecen en <code>app.js<code> o en los diferentes controladores.</p>
 <p>En los ejercicios se ven las siguientes características de AngularJS:</p>
 
 <ul>

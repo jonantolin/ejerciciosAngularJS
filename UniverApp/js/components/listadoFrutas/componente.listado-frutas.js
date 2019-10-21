@@ -79,16 +79,7 @@ angular.module('universidadApp')
 
     }); //end component
 
-    angular.module('universidadApp').
-        filter('euros', function(){ // Filtro para poner una cantidad en euros con formato de esp
 
-            return function(numero){
-
-                return numero.replace(".", ",") +" €";
-
-            }
-
-    });
 
     angular.module('universidadApp').
         filter('colores', function(){ // Filtro que saca los colores y evita que se repitan
