@@ -44,6 +44,24 @@ app.config( function( $routeProvider ){
       templateUrl: 'parciales/pokemon.html'
       //controller: 'pokemonController'
     })
+    .when('/ejercicio1',{
+      templateUrl: 'anteriores/ejercicio1/index.html'
+    })
+    .when('/ejercicio2',{
+      templateUrl: 'anteriores/ejercicio2/index.html'
+    })
+    .when('/evaluacion1',{
+      templateUrl: 'anteriores/evaluacion1/index.html'
+    })
+    .when('/ejercicioComponentes',{
+      templateUrl: 'anteriores/ejerciciocomponentes/index.html'
+    })
+    .when('/ejercicioCrudTareas',{
+      templateUrl: 'anteriores/ejerciciocrudtareas/index.html'
+    })
+    .when('/tutifruti',{
+      templateUrl: 'anteriores/tutifruti/index.html'
+    })
    /* .when('/alumno/:id',{ para pasar parametros
       templateUrl: 'parciales/formularios.html'
       controller: alumnoCtrl   // el controlador que se utilizara en ese html

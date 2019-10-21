@@ -1,0 +1,39 @@
+
+        <h1>Ejercicio Componentes</h1>
+
+        <a href="https://docs.angularjs.org/tutorial/step_03" target="_blank">Tutorial Oficial - Components</a>
+        <a href="https://docs.angularjs.org/guide/component" target="_blank">Documentación Oficial - Components</a>
+
+
+        <p>Nuestro primer componente:</p>
+        <saludo-usuario></saludo-usuario>
+
+        <p>Nuestro segundo componente con template para el HTML</p>
+        <componente-boton></componente-boton>
+
+
+        <hr>
+
+        <h2>Calificaciones de Pepe</h2>
+        <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Tecnologia</th>
+                    <th scope="col">Nota</th>                  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">HTML</th>
+                    <td><componente-calificacion pnota="10"></componente-calificacion></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">CSS</th>
+                    <td><componente-calificacion pnota="8"></componente-calificacion></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">JS</th>
+                    <td><componente-calificacion pnota="3"></componente-calificacion></td>
+                  </tr>
+                </tbody>
+              </table>

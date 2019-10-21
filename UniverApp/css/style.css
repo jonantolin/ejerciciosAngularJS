@@ -40,3 +40,7 @@ tr.pokemon:hover{
 div.modal-body, h5.modal-title{
   color: black;
 }
+
+p.boton-likes:hover{
+  cursor:pointer;
+}

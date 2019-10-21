@@ -9,9 +9,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-hourglass-end"></i> Ej.ANTERIORES
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#!/ejercicio1">Ejercicio 1</a>
+            <a class="dropdown-item" href="#!/ejercicio2">Ejercicio 2</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#!/evaluacion1">Evaluacion 1</a>
+            <a class="dropdown-item" href="#!/ejercicioComponentes">Ej. Componentes</a>
+            <a class="dropdown-item" href="#!/ejercicioCrudTareas">Tareas CRUD</a>
+            <a class="dropdown-item" href="anteriores/ejerciciohttprequest/index.html">Ej. Http Request</a>
+            <a class="dropdown-item" href="anteriores/ejercicioip/index.html">Geoloc. IP</a>
+            <a class="dropdown-item" href="#!/tutifruti">Fruteria</a>
+          </div>
+        </li>
         <li class="nav-item" ng-click="cambiarActivo(enlace)" ng-repeat="enlace in rutas" ng-class="(enlace.active)?'active':''">
           <a class="nav-link" ng-href="{{enlace.path}}"><i ng-class="enlace.icono"></i> {{enlace.nombre}}</a>
         </li>
+        
         
       </ul>
     </div>

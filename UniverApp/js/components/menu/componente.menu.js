@@ -35,7 +35,7 @@ angular.module('universidadApp')
                   "icono" : "fas fa-vector-square"
                 },
                 {
-                  "nombre": "Prog. Funcional (Contratos)",
+                  "nombre": "Contratos",
                   "path" : "#!/programacion-funcional",
                   "active" : false,
                   "icono" : "fas fa-file-contract"
