@@ -2,11 +2,7 @@
 
 <div ng-controller="pokemonesController">
 
-    <p>{{viernes | capitalizarCacho: 7 : 10}}
-    </p>
 
-
-   
     <div class=" col-6 border border-info shadow p-2 my-2">
         <label for="">Buscar pokemon</label>
         <input type="text" class="form-control" placeholder="Busca pokemon" ng-init="busqueda.name=''" ng-model="busqueda.name" ng-change="pagina=1; posicion=20; resultados=true;">

@@ -14,8 +14,6 @@ function pokemonesController($scope, pokemonProvider){
         $scope.pagina = 1;
         $scope.posicion = 20; // estara paginado de 20 en 20
 
-        $scope.viernes = "hoy es viernes";
-
 
         $scope.listar();
 

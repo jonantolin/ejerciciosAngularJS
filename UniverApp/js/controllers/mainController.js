@@ -17,7 +17,7 @@ this.$onInit = function(){
 
     $scope.constantes = servicioConstantes;
 
-
+    $scope.viernes = "hoy es viernes";
 
     let url = "http://localhost:3000/";
 
