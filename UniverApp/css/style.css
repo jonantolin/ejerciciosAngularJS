@@ -44,3 +44,7 @@ div.modal-body, h5.modal-title{
 p.boton-likes:hover{
   cursor:pointer;
 }
+
+.nav-item a{
+  font-size: 85%;
+}

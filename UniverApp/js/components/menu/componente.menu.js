@@ -29,7 +29,7 @@ angular.module('universidadApp')
                   "icono" : "fas fa-carrot"
                 },
                 {
-                  "nombre": "Map, Filter, Reduce",
+                  "nombre": "Map|Filter|Reduce",
                   "path" : "#!/map-filter-reduce",
                   "active" : false,
                   "icono" : "fas fa-vector-square"
@@ -47,7 +47,7 @@ angular.module('universidadApp')
                   "icono" : "fas fa-file-contract"
                 },
                 {
-                  "nombre": "Servicios",
+                  "nombre": "Services",
                   "path" : "#!/servicios",
                   "active" : false,
                   "icono" : "fas fa-file-contract"
